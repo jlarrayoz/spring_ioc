@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!--  Defino los dos beans que serán inyectados -->
+    <bean id="exactSearch" class="uy.edu.curso.ExactMatchSearchService"/>
+    <bean id="nameOfTheTextBook" class="java.lang.String">
+        <constructor-arg value="String inyectado por el contenedor"/>
+    </bean>
+
+	<!-- Defino el bean que va a recibir las inyecciones -->
+    <bean id="student" class="uy.edu.curso.di.LazyStudent">
+        <constructor-arg type="uy.edu.curso.SearchService" ref="exactSearch"/>
+        <constructor-arg type="java.lang.String" ref="nameOfTheTextBook"/>
+    </bean>
+
+</beans>
