@@ -12,6 +12,7 @@ public class SpringExamPreparation {
 
 		LazyStudent lazyStudent = (LazyStudent) container.getBean("student");
 		System.out.println(lazyStudent.findTheAnswer("¿Funciona la inyección"));
+		System.out.println(lazyStudent.getNameOfTheTextBook());
 		
 	}
 

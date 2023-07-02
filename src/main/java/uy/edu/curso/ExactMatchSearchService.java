@@ -4,6 +4,12 @@ import java.util.Collections;
 import java.util.List;
 
 public class ExactMatchSearchService implements SearchService {
+	
+	
+
+	public ExactMatchSearchService() {
+		super();
+	}
 
 	public List<Integer> find(String searchObjectName, String searchInput) {
 		//No se implementa el servico, se devuelve colección vacía

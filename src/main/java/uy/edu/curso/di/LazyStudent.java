@@ -16,4 +16,9 @@ public class LazyStudent {
     public List<Integer> findTheAnswer(String examQuestion) {
         return service.find(nameOfTheTextBook, examQuestion);
     }
+
+	public String getNameOfTheTextBook() {
+		return nameOfTheTextBook;
+	}  
+   
 }
