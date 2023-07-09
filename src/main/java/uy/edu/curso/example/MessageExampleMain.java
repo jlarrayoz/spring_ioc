@@ -23,6 +23,9 @@ public class MessageExampleMain {
 		
 		System.out.println("Mensaje:" + setterMessage.getMessage());
 		
+		
+		((ClassPathXmlApplicationContext) applicationContext).close();
+		
 	}
 }
 

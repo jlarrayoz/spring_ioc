@@ -14,6 +14,9 @@ public class SpringExamPreparation {
 		System.out.println(lazyStudent.findTheAnswer("¿Funciona la inyección"));
 		System.out.println(lazyStudent.getNameOfTheTextBook());
 		
+		
+		//Destruimos el container para ver como se invoca el metodo destroy
+		((ClassPathXmlApplicationContext) container).close();
 	}
 
 }

@@ -9,13 +9,19 @@
       
    <!--  Linea necesaria para habilitar el procesamiento de anotaciones -->
    <context:annotation-config/>
+   
+   <bean id="tipoServicio" class="uy.edu.curso.inheritance.TipoPersona" factory-method="valueOf">
+   	<constructor-arg value="JURIDICA"/>
+   </bean>
+   
+   <bean id="serviceLocator" class="uy.edu.curso.inheritance.DefaultServiceLocator"/>  
+   
+   <bean id="personaService" factory-bean="serviceLocator" factory-method="createPersonaServiceInstance">
+   	<constructor-arg name="tipo" ref="tipoServicio"/>
+   </bean>
       
-   <bean id="consMessage" class="uy.edu.curso.example.ConstructorMessage">
- 		<constructor-arg value="Mensaje inyectado por constructor"></constructor-arg>   
-    </bean>
-    
- 	<bean id="setterMessage" class="uy.edu.curso.example.SetterMessage">
-        <property name="message" value="Mensaje inyectado por el setter" />
-    </bean>
+   <bean id="inscripcionService" class="uy.edu.curso.inheritance.InscripcionService">
+   <constructor-arg name="personaService" ref="personaService"/>
+   </bean>
           
   </beans>
